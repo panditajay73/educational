@@ -4,9 +4,7 @@
     Author     : Ajay Pandey
 --%>
 
-<%@page import="java.sql.ResultSet"%>
-<%@page import="MyPack.ConnectionManager"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -126,20 +124,7 @@
                         <th style=";text-align: center">Cources</th>
                         <th style=";text-align: center">Year</th>
                     </tr>  
-                    <%
-ConnectionManager cm=new ConnectionManager(); 
-String command="select * from cources";
-ResultSet rs=cm.getData(command);
-while(rs.next())
-{
-%>
- <tr>
-                <td style="color: black;text-align: center"><%=rs.getString(1)%></td>
-                <td style="color: red ;text-align: center"><%=rs.getString(2)%></td>
-                <td style="color: red; text-align: center"><%=rs.getString(3)%></td>
-                <td style="color: red ;text-align: center"><%=rs.getString(4)%></td>
- </tr>
- <%}%>
+ 
                 </table>  
                 
             </div>       
