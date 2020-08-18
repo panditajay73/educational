@@ -1,0 +1,27 @@
+.row
+{
+min-height:100px;
+background:teal;
+    margin-top: 20px;
+}
+
+#r1
+{
+    background: brown;
+}
+#rr1
+{
+    background: brown;
+    min-height:100px;
+}
+
+#rr2
+{
+    background: green;
+    min-height:100px;
+}
+#rr3
+{
+    background: brown;
+    min-height:100px;
+}

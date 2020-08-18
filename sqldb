@@ -1,0 +1,208 @@
+ Server: localhost  -   Database: project
+ 
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Aug 11, 2019 at 03:00 AM
+-- Server version: 5.1.36
+-- PHP Version: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `project`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admitcard`
+--
+
+CREATE TABLE IF NOT EXISTS `admitcard` (
+  `name` varchar(60) NOT NULL,
+  `rollno` varchar(40) NOT NULL,
+  `cource` varchar(80) NOT NULL,
+  `branch` varchar(100) NOT NULL,
+  `ranking` varchar(50) NOT NULL,
+  `acard` varchar(200) NOT NULL,
+  PRIMARY KEY (`rollno`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admitcard`
+--
+
+INSERT INTO `admitcard` (`name`, `rollno`, `cource`, `branch`, `ranking`, `acard`) VALUES
+('Ajay Pandey', '7345356', 'diploma', 'null', '600', 'nn.jpeg'),
+('mukesh', '87345', 'btech', 'civil', '90000', '1st semester result pandey.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `name` varchar(50) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `mobile` varchar(200) NOT NULL,
+  `msg` varchar(300) NOT NULL,
+  `address` varchar(300) NOT NULL,
+  `college` varchar(300) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`name`, `email`, `mobile`, `msg`, `address`, `college`) VALUES
+('sk', 'asd@gmail.com', 'sdfg', '       eefg                 ', 'rfg', 'dsf'),
+('Ajay Pandey', 'ajaypandey91700@gmail.com', '6393145861', 'jai bhole                        ', 'mera jila sdr', 'gp basti'),
+('Ajay', 's@gmail.com', '7348115017', '     test                   ', 'chauraha', 'mmit siddhartha nagar'),
+('Ajay Pandey', 'ajaypandey91700@gmail.com', '6393145861', 'jai bhole                        ', 'mera jila sdr', 'gp basti');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cources`
+--
+
+CREATE TABLE IF NOT EXISTS `cources` (
+  `collegecode` varchar(50) NOT NULL,
+  `collegename` varchar(100) NOT NULL,
+  `cource` varchar(200) NOT NULL,
+  `year` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cources`
+--
+
+INSERT INTO `cources` (`collegecode`, `collegename`, `cource`, `year`) VALUES
+('144', 'mmit siddhartha nagar', 'diploma', 'first year'),
+('2220', 'Aktu lucknow', 'btech', 'third year'),
+('144', 'Aktu lucknow', 'diploma', 'third year');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fees`
+--
+
+CREATE TABLE IF NOT EXISTS `fees` (
+  `sname` varchar(70) NOT NULL,
+  `cource` varchar(90) NOT NULL,
+  `branch` varchar(100) NOT NULL,
+  `year` varchar(40) NOT NULL,
+  `rupees` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fees`
+--
+
+INSERT INTO `fees` (`sname`, `cource`, `branch`, `year`, `rupees`) VALUES
+('Ajay', 'diploma', 'civil', 'first year', '11210'),
+('Laxman Mishra', 'btech', 'Computer Science', 'first year', '20000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `userid` varchar(60) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `utype` varchar(50) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`userid`, `password`, `utype`) VALUES
+('ffg@gmail.com', '876', 'user'),
+('ad@gmail.com', 'ZWG', 'user'),
+('mukesh@gmail.com', 'NFPVHS', 'user'),
+('ajaypandey91700@gmail.com', 'YLNY', 'user'),
+('ajay@gmail.com', 'ZQZB', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE IF NOT EXISTS `notification` (
+  `msg` varchar(200) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`msg`) VALUES
+('my notification'),
+('Spot counciling started..'),
+('spot counciling date- 14-08-2019'),
+('Manage from admin zone'),
+('lucknow');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration`
+--
+
+CREATE TABLE IF NOT EXISTS `registration` (
+  `name` varchar(50) NOT NULL,
+  `father` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `qualification` varchar(100) NOT NULL,
+  `mobile` varchar(30) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `address` varchar(300) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `confirm` varchar(60) NOT NULL,
+  `pic` varchar(200) NOT NULL,
+  `regdt` varchar(70) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`name`, `father`, `gender`, `qualification`, `mobile`, `email`, `address`, `password`, `confirm`, `pic`, `regdt`) VALUES
+('Mukesh', 'Mr. Harishchandra chaudhary', 'Male', 'Diploma', '9746325264', 'mukesh@gmail.com', 'Basti                        ', 'NFPVHS', 'mukesh', 'orsrc6224.jpg', '2019-08-10'),
+('dfg', 'dfgh', 'Male', 'B.tech', '123', 'ffg@gmail.com', '          dfghj              ', '876', '123', 'orsrc4179.jpg', '2019-08-11'),
+('Ajay Pandey', 'Mr. Rajesh Pandey', 'Male', 'Diploma', '6393145861', 'ajaypandey91700@gmail.com', 'siddhartha nagar                        ', 'YLNY', 'bomb', 'IMG_20190604_185709_618.jpg', '2019-08-10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE IF NOT EXISTS `review` (
+  `name` varchar(100) NOT NULL,
+  `star` varchar(40) NOT NULL,
+  `mobno` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`name`, `star`, `mobno`) VALUES
+('Ajay Pandey', '5', '7348115017'),
+('mukesh', '4', '8347635453'),
+('Niharika', '3', '6393145861'),
+('Pankaj Babu', '5', '8976465464'),
+('namrata singh', '4', '7645342324');
+
